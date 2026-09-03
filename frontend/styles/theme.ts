@@ -1,4 +1,4 @@
 export const theme = {
-  colors: { canvas: '#0b1117', surface: '#111a22', accent: '#71d7c2', verified: '#54c78a', configured: '#e5b45f', estimated: '#8995a1' },
+  colors: { canvas: '#edf4ee', surface: '#ffffff', rail: '#173624', accent: '#1f7a4d', verified: '#42ad63', configured: '#e5b45f', estimated: '#899b8f' },
   spacing: { unit: 4 },
 } as const;
