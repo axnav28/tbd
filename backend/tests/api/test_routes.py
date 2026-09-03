@@ -20,3 +20,9 @@ def test_optimizer_never_exceeds_gordon_loeb_bound() -> None:
 def test_query_contains_graph_citation() -> None:
     body = client.post("/api/v1/query", json={"question": "what is exposed?"}).json()
     assert body["citations"][0]["type"] == "path"
+
+
+def test_compliance_route_returns_curated_mappings() -> None:
+    body = client.get("/api/v1/compliance").json()
+    assert body["implemented"] is True
+    assert len(body["mappings"]) >= 8

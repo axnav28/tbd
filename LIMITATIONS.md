@@ -1,6 +1,6 @@
 # Limitations
 
-This repository is currently through Phase 5. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, bounded LP, ingestion boundaries, integrity checks, synthetic generator, and live EPSS/KEV client path are implemented and tested. No enterprise telemetry is present. Docker Compose validation is complete against live PostgreSQL, backend, and frontend containers; the backend retries and verifies `SELECT 1` before serving when Compose enables its startup check.
+This repository is currently through Phase 6. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, bounded LP, ingestion boundaries, integrity checks, synthetic generator, live EPSS/KEV client path, and curated compliance subset are implemented and tested. No enterprise telemetry is present. Docker Compose validation is complete against live PostgreSQL, backend, and frontend containers; the backend retries and verifies `SELECT 1` before serving when Compose enables its startup check.
 
 ## Explicitly stubbed by request
 
@@ -14,4 +14,4 @@ Predicted-vs-actual recommendation verification is not implemented. It would req
 
 LLM-assisted regulatory change-diffing is not implemented. The production version would need authoritative framework ingestion, document versioning, human review, and citation validation.
 
-The demo dataset, compliance mappings, audit log, and product UI are scheduled for later phases and must not be inferred from this scaffold. EPSS and KEV are live only when the explicit likelihood endpoint is called; the synthetic seed remains deterministic and does not silently refresh stored records.
+The compliance crosswalk is a deliberately limited, source-linked subset, not a certification or legal opinion. Full framework coverage, audit evidence collection, audit log, and product UI are scheduled for later phases and must not be inferred from this scaffold. EPSS and KEV are live only when the explicit likelihood endpoint is called; the synthetic seed remains deterministic and does not silently refresh stored records.

@@ -13,6 +13,10 @@ The scaffold established the service boundaries first. Phase 1 contains the fram
 - Authentication is represented by a documented stub boundary, not a fake login flow.
 - The frontend-design reference requested by the brief was not available in this environment; the visual system will be implemented before frontend product screens in Phase 7.
 
+## Compliance crosswalk
+
+Phase 6 exposes a curated JSON-backed subset for the five requested frameworks. Every mapping carries a source URL; RBI and SEBI entries intentionally use publication-level references where a clause-level citation has not yet been verified. Equivalence is conservative: same-objective evidence can be traced, but SEBI-exclusive evidence is not silently substituted across frameworks.
+
 ## Threat intelligence refresh
 
 The Phase 5 CVE likelihood path calls FIRST's public EPSS API and CISA's KEV JSON feed, then preserves both source labels in the API response. EPSS is treated as a 30-day exploitation probability; the transparent KEV uplift is a configured heuristic and is not silently presented as an annualized frequency.
