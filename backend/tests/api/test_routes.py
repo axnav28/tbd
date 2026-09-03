@@ -26,3 +26,8 @@ def test_compliance_route_returns_curated_mappings() -> None:
     body = client.get("/api/v1/compliance").json()
     assert body["implemented"] is True
     assert len(body["mappings"]) >= 8
+
+
+def test_api_allows_frontend_origin() -> None:
+    response = client.options('/api/v1/health', headers={'Origin': 'http://localhost:3000', 'Access-Control-Request-Method': 'GET'})
+    assert response.headers['access-control-allow-origin'] == 'http://localhost:3000'

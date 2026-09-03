@@ -1,6 +1,6 @@
 # Limitations
 
-This repository is currently through Phase 8. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, bounded LP, ingestion boundaries, integrity checks, synthetic generator, live EPSS/KEV client path, curated compliance subset, and constrained graph query layer are implemented and tested. No enterprise telemetry is present. Docker Compose validation is complete against live PostgreSQL, backend, and frontend containers; the backend retries and verifies `SELECT 1` before serving when Compose enables its startup check.
+This repository is through the Phase 10 polish pass. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, bounded LP, ingestion boundaries, integrity checks, synthetic generator, live EPSS/KEV client path, curated compliance subset, constrained graph query layer, audit ledger, frontend product views, loading/error states, and Docker run-through are implemented and tested. No enterprise telemetry is present. Docker Compose has been validated from a clean state against live PostgreSQL, backend, and frontend containers; the backend retries and verifies `SELECT 1` before serving when Compose enables its startup check.
 
 ## Explicitly stubbed by request
 

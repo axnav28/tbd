@@ -1,0 +1,1 @@
+export default function Loading() { return <main><div className="eyebrow">TBD / Risk intelligence</div><div className="skeleton-title" /><div className="skeleton-line" /><div className="skeleton-line short" /></main>; }
