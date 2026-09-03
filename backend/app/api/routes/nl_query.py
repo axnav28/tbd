@@ -2,6 +2,7 @@
 
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
+from app.domain.query.graph_tools import answer_question
 
 router = APIRouter(prefix="/query", tags=["query"])
 
@@ -12,4 +13,5 @@ class QueryRequest(BaseModel):
 
 @router.post("")
 def query(request: QueryRequest) -> dict[str, object]:
-    return {"answer": f"The query was constrained to the synthetic attack graph: {request.question}", "citations": [{"type": "path", "id": "S1", "nodes": ["asset-01", "asset-02"]}], "synthetic": True}
+    result = answer_question(request.question)
+    return {"answer": result.answer, "citations": result.citations, "synthetic": True, "tool": "graph_query"}
