@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { Activity, BarChart3, Network, Shield, Sparkles } from 'lucide-react';
+import { Activity, BarChart3, Network, Shield, Sparkles, ScrollText } from 'lucide-react';
 
 const links = [
-  ['/','Overview',Activity], ['/graph','Attack paths',Network], ['/optimizer','Investment',BarChart3], ['/compliance','Compliance',Shield], ['/query','Ask the graph',Sparkles],
+  ['/','Overview',Activity], ['/graph','Attack paths',Network], ['/optimizer','Investment',BarChart3], ['/compliance','Compliance',Shield], ['/query','Ask the graph',Sparkles], ['/audit','Audit ledger',ScrollText],
 ] as const;
 
 export function Shell({ eyebrow, title, children }: { eyebrow: string; title: string; children: React.ReactNode }) {
