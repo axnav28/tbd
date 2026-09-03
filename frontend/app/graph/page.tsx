@@ -1,0 +1,1 @@
+export default function GraphPage() { return <main><div className="eyebrow">Attack graph</div><h1>Coming in Phase 7.</h1><p>The graph view will only render evidence-backed paths after the domain graph engine is implemented.</p></main>; }

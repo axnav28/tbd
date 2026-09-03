@@ -1,0 +1,1 @@
+export default function CompliancePage() { return <main><div className="eyebrow">Compliance crosswalk</div><h1>Coming in Phase 7.</h1><p>Curated mappings will arrive after authoritative framework data is added.</p></main>; }

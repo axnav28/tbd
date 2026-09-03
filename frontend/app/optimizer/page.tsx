@@ -1,0 +1,1 @@
+export default function OptimizerPage() { return <main><div className="eyebrow">Investment optimizer</div><h1>Coming in Phase 7.</h1><p>Recommendations will be shown only with bounded optimization outputs and quantified choke-point effects.</p></main>; }

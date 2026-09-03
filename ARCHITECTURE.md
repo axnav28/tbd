@@ -1,0 +1,18 @@
+# Architecture decisions
+
+## Phase 0 boundary
+
+This change intentionally contains no risk math, synthetic telemetry, database ORM models, graph logic, or recommendation UI. Service boundaries and package locations are established first so later phases can be introduced without changing deployment topology.
+
+## Decisions
+
+- FastAPI is the only backend service and owns the future domain/API boundary.
+- PostgreSQL is included from day one, but Phase 0 performs only a connectivity health check.
+- Next.js App Router is the frontend shell; its future API client will call the backend through `NEXT_PUBLIC_API_URL`.
+- NetworkX, PuLP, NumPy/SciPy, SQLAlchemy, and Alembic will be added with the first phase that needs each dependency.
+- Authentication is represented by a documented stub boundary, not a fake login flow.
+- The frontend-design reference requested by the brief was not available in this environment; the visual system will be implemented before frontend product screens in Phase 7.
+
+## Planned data flow
+
+Connectors → normalized persistence → runtime NetworkX graph → FAIR/Monte Carlo quantification → bounded optimizer → API projections → frontend views. Mutations will later pass through the append-only audit boundary.

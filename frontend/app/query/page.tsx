@@ -1,0 +1,1 @@
+export default function QueryPage() { return <main><div className="eyebrow">Cited graph query</div><h1>Coming in Phase 8.</h1><p>Natural-language answers will cite specific graph nodes and attack paths.</p></main>; }
