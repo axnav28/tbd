@@ -1,6 +1,6 @@
 # Limitations
 
-This repository is currently at Phase 0. The containers boot and communicate, but no risk figures or telemetry are presented as real results.
+This repository is currently through Phase 2. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, and bounded LP are implemented and tested. No enterprise telemetry is present, and Docker has not been validated because Docker is unavailable in the development environment.
 
 ## Explicitly stubbed by request
 
