@@ -24,3 +24,5 @@ Open http://localhost:3000 for the frontend and http://localhost:8000/docs for A
 Run the backend suite locally with `cd backend && python -m pytest`.
 
 See [the demo walkthrough](docs/demo-script.md) and [limitations](LIMITATIONS.md).
+
+Threat intelligence sources: [FIRST EPSS API](https://api.first.org/) and [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog).
