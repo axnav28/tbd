@@ -1,8 +1,22 @@
 """FastAPI entrypoint for the TBD service scaffold."""
 
+import os
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 
-app = FastAPI(title="TBD Cyber Risk Platform", version="0.1.0")
+from app.persistence.db import wait_for_database
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    """Validate the database before serving requests when Compose enables it."""
+    if os.getenv("CHECK_DATABASE_ON_STARTUP", "false").lower() == "true":
+        wait_for_database(os.getenv("DATABASE_URL", ""))
+    yield
+
+
+app = FastAPI(title="TBD Cyber Risk Platform", version="0.1.0", lifespan=lifespan)
 
 
 @app.get("/health", tags=["system"])

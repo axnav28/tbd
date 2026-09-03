@@ -1,6 +1,6 @@
 # Limitations
 
-This repository is currently through Phase 2. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, and bounded LP are implemented and tested. No enterprise telemetry is present. Docker has not been validated: Docker Desktop and alternate runtimes are unavailable in the current macOS environment. Phase 3 is intentionally blocked until Compose can be run against a live Postgres container.
+This repository is currently through Phase 3. The framework-agnostic graph, FAIR-inspired calculations, Monte Carlo sampler, de-duplication invariant, choke-point ranking, bounded LP, ingestion boundaries, integrity checks, and synthetic generator are implemented and tested. No enterprise telemetry is present. Docker Compose validation is complete against live PostgreSQL, backend, and frontend containers; the backend retries and verifies `SELECT 1` before serving when Compose enables its startup check.
 
 ## Explicitly stubbed by request
 
