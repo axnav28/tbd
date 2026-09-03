@@ -1,6 +1,7 @@
 """Executive risk projections with explicit confidence provenance."""
 
 from fastapi import APIRouter
+from datetime import datetime, timezone
 
 from app.api.deps import demo_data
 from app.api.deps import audit_log
@@ -24,6 +25,16 @@ def risk_summary() -> dict[str, object]:
     eal = {"value": 1_250_000.0, "currency": "INR", "confidence": "Estimated"}
     var = {"value": 3_100_000.0, "currency": "INR", "percentile": 0.95, "confidence": "Estimated"}
     return {"organization": data["organization"], "synthetic": True, "eal": eal, "var": var, "scenarios": 2}
+
+
+@router.get("/live-feed")
+def live_feed() -> dict[str, object]:
+    """Return the minute-refresh feed envelope used by the command center."""
+    return {"refreshed_at": datetime.now(timezone.utc).isoformat(), "source": "TBD model refresh", "synthetic": True, "events": [
+        {"time": "now", "severity": "critical", "title": "Shared choke point under review", "detail": "VPN gateway intersects 2 modeled attack scenarios", "confidence": "Estimated"},
+        {"time": "2m", "severity": "high", "title": "KEV signal retained", "detail": "CVE-2021-44228 remains in the Northstar synthetic inventory", "confidence": "Verified"},
+        {"time": "7m", "severity": "watch", "title": "Control evidence gap", "detail": "Patch deployment is configured but not verified", "confidence": "Configured"},
+    ]}
 
 
 @router.get("/likelihood/{cve}")
