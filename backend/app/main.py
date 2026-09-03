@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.persistence.db import wait_for_database
+from app.api.routes import audit, compliance, graph, nl_query, optimizer, risk
 
 
 @asynccontextmanager
@@ -17,6 +18,12 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="TBD Cyber Risk Platform", version="0.1.0", lifespan=lifespan)
+app.include_router(risk.router, prefix="/api/v1")
+app.include_router(graph.router, prefix="/api/v1")
+app.include_router(optimizer.router, prefix="/api/v1")
+app.include_router(compliance.router, prefix="/api/v1")
+app.include_router(nl_query.router, prefix="/api/v1")
+app.include_router(audit.router, prefix="/api/v1")
 
 
 @app.get("/health", tags=["system"])
